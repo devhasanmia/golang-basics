@@ -1,18 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
 func main() {
 
-	var fullName string
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Enter your full name: ")
+	fullName, _ := reader.ReadString('\n')
+	fullName = strings.TrimSpace(fullName)
+	fmt.Printf("My name is %v\n", fullName)
+
+	// var fullName string
 	// var age int
 	// var gpa float32
-
 	// Input: Scan, ScanIn Scanf
-	fmt.Print("Enter your name")
-	fmt.Scan(&fullName)
-
-	fmt.Printf("My name is %v", fullName)
+	// fmt.Print("Enter your name")
+	// fmt.Scan(&fullName)
+	// fmt.Printf("My name is %v", fullName)
 	// variable naming rules
 	// 1. letters, digits, _
 	// 2. keywords are not allowed as variable
